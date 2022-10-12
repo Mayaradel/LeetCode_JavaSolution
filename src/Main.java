@@ -1,3 +1,4 @@
+import javax.xml.transform.stream.StreamSource;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -146,12 +147,20 @@ public class Main {
         return n;
     }
 
+    public static int lengthOfLastWord(String s) {
+        String[] splited = s.split(" ");
+        String lastWord = splited[(splited.length) - 1];
+        return lastWord.length();
+    }
+
+
     public static void main(String[] args) {
         //isAnagram("mayar", "yamar");
         int[] array = {0, 3, 1, 2, 5};
 //		System.err.println(array.length);
 //		twoSum(array, 10);
-        missingNumber(array);
+        //missingNumber(array);
+//        lengthOfLastWord("Mayar Adel Hanafi Gamal");
     }
 }
 
