@@ -1,4 +1,3 @@
-import javax.xml.transform.stream.StreamSource;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -52,7 +51,7 @@ public class Main {
 
     }
 
-    public class ListNode {
+    public static class ListNode {
         int val;
         ListNode next;
 
@@ -152,6 +151,37 @@ public class Main {
         String lastWord = splited[(splited.length) - 1];
         return lastWord.length();
     }
+    public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        if(list1 == null) {
+            return list2;
+        }
+
+        if(list2 == null) {
+            return list1;
+        }
+
+        ListNode Newlist = new ListNode(0) ;
+        ListNode current=Newlist;
+        while(list1!=null && list2 !=null){
+            if(list1.val < list2.val){
+                current.next = list1;
+                list1=list1.next;
+
+            }
+            else {
+                current.next=list2;
+                list2=list2.next;
+            }
+            current=current.next;
+            if(list1!=null){
+                current.next=list1;
+            }
+            else {
+                current.next = list2;
+            }
+        }
+        return Newlist.next;
+    }
 
 
     public static void main(String[] args) {
@@ -160,7 +190,7 @@ public class Main {
 //		System.err.println(array.length);
 //		twoSum(array, 10);
         //missingNumber(array);
-//        lengthOfLastWord("Mayar Adel Hanafi Gamal");
+      //  lengthOfLastWord("Mayar Adel Hanafi Gamal");
     }
 }
 
